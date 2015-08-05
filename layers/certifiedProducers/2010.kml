@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>2010.kml</name>
+	<Style id="sh_blu-blank26">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_blu-blank37">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_blu-blank39">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blu-blank38</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_blu-blank26</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_blu-blank11">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blu-blank37</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_blu-blank33</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blu-blank32">
+		<IconStyle>
+			<scale>0.8</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_blu-blank33">
+		<IconStyle>
+			<scale>0.590909</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_blu-blank28">
+		<IconStyle>
+			<scale>0.945455</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_blu-blank8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blu-blank32</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_blu-blank28</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blu-blank38">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Folder>
+		<name>2010</name>
+		<Placemark>
+			<name>Amaltheia Organic Dairy</name>
+			<LookAt>
+				<longitude>-111.103775999409</longitude>
+				<latitude>45.80381300027822</latitude>
+				<altitude>0</altitude>
+				<heading>4.237214460512733e-010</heading>
+				<tilt>0</tilt>
+				<range>999.9084584653281</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-blank8</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-111.103775999409,45.80381300027821,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>C-5 Organics</name>
+			<LookAt>
+				<longitude>-111.1115510019876</longitude>
+				<latitude>45.86401989875246</latitude>
+				<altitude>0</altitude>
+				<heading>-1.426475594081706e-009</heading>
+				<tilt>0</tilt>
+				<range>999.9999473629952</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-blank39</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-111.1149775257599,45.8668323169995,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Country Pasta</name>
+			<LookAt>
+				<longitude>-114.1733384924244</longitude>
+				<latitude>47.70589400413152</latitude>
+				<altitude>0</altitude>
+				<heading>5.603647543317771e-009</heading>
+				<tilt>0</tilt>
+				<range>6542.890972304341</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-blank11</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-114.2040687008699,47.71891546597024,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Gallatin Valley Botanical</name>
+			<LookAt>
+				<longitude>-111.0472220012171</longitude>
+				<latitude>45.67777799350247</latitude>
+				<altitude>0</altitude>
+				<heading>-8.708215592886443e-010</heading>
+				<tilt>0</tilt>
+				<range>10513.60155359476</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-blank11</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-111.0535181127554,45.67692244890117,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Harvest Winds Farm</name>
+			<LookAt>
+				<longitude>-110.5371070011344</longitude>
+				<latitude>45.69876100082673</latitude>
+				<altitude>0</altitude>
+				<heading>-8.11904964369214e-010</heading>
+				<tilt>0</tilt>
+				<range>1000.000332603183</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-blank11</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-110.5371070011344,45.69876100082673,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Natural Creations Foods</name>
+			<LookAt>
+				<longitude>-114.0116670293469</longitude>
+				<latitude>46.86250002094199</latitude>
+				<altitude>0</altitude>
+				<heading>-2.141488140634815e-008</heading>
+				<tilt>0</tilt>
+				<range>20569.99415607898</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_blu-blank11</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-114.0190115336713,46.8519757420158,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

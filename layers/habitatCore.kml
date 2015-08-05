@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<GroundOverlay id="0">
+	<name>Habitat Core</name>
+	<Snippet maxLines="0"></Snippet>
+	<drawOrder>6882384</drawOrder>
+	<Icon>
+		<href>https://mail.google.com/mail/u/0/?ui=2&ik=336d415ffb&view=fimg&th=14e98e145b5ecb80&attid=0.1&disp=inline&realattid=f_ic6qolpa0&safe=1&attbid=ANGjdJ8vltghChu8VUKyM6SHc5C_g0Nsq3O1miNzcwh9IVmqK1-B8DF4E0Nhs7NIFH3NOSX0_CpUzvYNC9KWlDZjhdkFafnmTNrR_bO1Qf_MXe8dmaXpX5e-Zk2dU7s&ats=1437083980243&rm=14e98e145b5ecb80&zw&sz=w1890-h840</href>
+	</Icon>
+	<LatLonBox>
+		<north>51.65475281045327</north>
+		<south>38.86481348333435</south>
+		<east>-99.96297845340844</east>
+		<west>-122.2422581307537</west>
+	</LatLonBox>
+</GroundOverlay>
+</kml>

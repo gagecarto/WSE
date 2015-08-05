@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>KML Data</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+	
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+	<link href="css/jquery.multiselect.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/cupertino/jquery-ui.css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>  
+	<script type="text/javascript" src="js/jquery.multiselect.js"></script>    
+	<script src="js/KML.js"></script>
+	<script src="js/main.js"></script>	
+	<script src="js/dataStructure.json"></script>
+
+
+<style>
+  body { 
+  	margin:0; 
+  	padding:0; 
+  }
+  #map { 
+  	position:absolute; 
+  	top:0; 
+  	bottom:0; 
+  	right:0px;
+  	width:80%; 
+  }
+  
+  #sidebar{
+  	position: absolute;
+  	width:20%;
+  	left: 0px;
+  	height: 100%;
+  }
+  .layerGroupHolder{
+
+  }
+  .dropdownMenu{
+
+  }
+  .menuSubtitle{
+
+  }
+</style>
+</head>
+<body>
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+<div id='map'></div>
+
+<div id='sidebar'>
+</div>
+</body>
+</html>
