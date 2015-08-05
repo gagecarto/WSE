@@ -8,6 +8,8 @@ function initialize() {
 	L.mapbox.accessToken = 'pk.eyJ1Ijoic25vd2dhZ2UiLCJhIjoiUnhjQVVqMCJ9.IwvvLu1WhgtaSryHAf5Daw';
 	var map = L.mapbox.map('map', 'mapbox.streets');
 
+	map.setView([45.2,-111],8)
+
 	//var track = new L.KML("layers/habitatCores.kml", {async: true});
 	//track.on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
 	//map.addLayer(track);
