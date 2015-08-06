@@ -1,42 +1,57 @@
 var dataStructure=[
 	//folder 1
 	{
+		"type":"kmlLayers",
 		"path":"layers/certifiedProducers/",
 		"description":"",
 		"name":"Certified Producers",	
 		"id":"certifiedProducers",
 		"files":[
-			{"name":"2014 Producers","id":"producers2014","fileName":"2014.kml","description":""},
-			{"name":"2013 Producers","id":"producers2013","fileName":"2013.kml","description":""},
-			{"name":"2012 Producers","id":"producers2012","fileName":"2012.kml","description":""},
-			{"name":"2011 Producers","id":"producers2011","fileName":"2011.kml","description":""},
-			{"name":"2010 Producers","id":"producers2010","fileName":"2010.kml","description":""},
-			{"name":"2009 Producers","id":"producers2009","fileName":"2009.kml","description":""},
+			{"name":"2014 Producers","id":"producers2014","fileName":"2014.kml","description":"","type":"kmlLayer"},
+			{"name":"2013 Producers","id":"producers2013","fileName":"2013.kml","description":"","type":"kmlLayer"},
+			{"name":"2012 Producers","id":"producers2012","fileName":"2012.kml","description":"","type":"kmlLayer"},
+			{"name":"2011 Producers","id":"producers2011","fileName":"2011.kml","description":"","type":"kmlLayer"},
+			{"name":"2010 Producers","id":"producers2010","fileName":"2010.kml","description":"","type":"kmlLayer"},
+			{"name":"2009 Producers","id":"producers2009","fileName":"2009.kml","description":"","type":"kmlLayer"},
 		]
 	},
 	//folder 2
 	{
+		"type":"kmlLayers",
 		"path":"layers/farmersMarket/",
 		"description":"",
 		"name":"Farmers Markets",	
 		"id":"farmersMarket",
 		"files":[
-			{"name":"2014 Farmers Markets","id":"farmersMarkets2014","fileName":"2014.kml","description":""},
-			{"name":"2013 Farmers Markets","id":"farmersMarkets2013","fileName":"2013.kml","description":""},
-			{"name":"Older Farmers Markets","id":"farmersMarketsOld","fileName":"Old.kml","description":""},			
+			{"name":"2014 Farmers Markets","id":"farmersMarkets2014","fileName":"2014.kml","description":"","type":"kmlLayer"},
+			{"name":"2013 Farmers Markets","id":"farmersMarkets2013","fileName":"2013.kml","description":"","type":"kmlLayer"},
+			{"name":"Older Farmers Markets","id":"farmersMarketsOld","fileName":"Old.kml","description":"","type":"kmlLayer"},			
 		]
 	},
 	//folder 3
 	{
+		"type":"kmlLayers",
 		"path":"layers/workshopAttendees/",
 		"description":"",
 		"name":"Workshop Attendees",	
 		"id":"workshopAttendees",
 		"files":[
-			{"name":"CNR Workshops","id":"cnrWorkshops","fileName":"CNR workshops.kml","description":""},
-			{"name":"Drought Planning","id":"droughtPlanning","fileName":"Drought Planning.kml","description":""},
-			{"name":"Ranching For Profit","id":"ranchingForProfit","fileName":"Ranching For Profit.kml","description":""},
-			{"name":"Stockmanship","id":"stockmanship","fileName":"Stockmanship.kml","description":""},			
+			{"name":"CNR Workshops","id":"cnrWorkshops","fileName":"CNR workshops.kml","description":"","type":"kmlLayer"},
+			{"name":"Drought Planning","id":"droughtPlanning","fileName":"Drought Planning.kml","description":"","type":"kmlLayer"},
+			{"name":"Ranching For Profit","id":"ranchingForProfit","fileName":"Ranching For Profit.kml","description":"","type":"kmlLayer"},
+			{"name":"Stockmanship","id":"stockmanship","fileName":"Stockmanship.kml","description":"","type":"kmlLayer"},			
 		]
+	},
+	//cartodbLayers
+	{
+		"type":"cartodbLayers",
+		"name":"Other Layers",	
+		"id":"otherLayers",
+		"files":[
+			{"name":"Public Lands","id":"pubLands","description":"","type":"cartoDBLayer"},			
+			{"name":"Grizzly Bears (2010)","id":"grizLayer","description":"","type":"cartoDBLayer"},			
+			{"name":"Elk Habitat","id":"elkLayer","description":"","type":"cartoDBLayer"},			
+		]
+
 	}
 ]

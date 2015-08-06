@@ -35,14 +35,19 @@
   	top:0; 
   	bottom:0; 
   	right:0px;
-  	width:80%; 
+    width: -moz-calc(100% - 260px);
+    width: -webkit-calc(100% - 260px);
+    width: -o-calc(100% - 260px);
+    width: calc(100% - 260px);
   }
   
   #sidebar{
+    padding: 10px;
   	position: absolute;
-  	width:20%;
+  	width:240px;
   	left: 0px;
   	height: 100%;
+    background-color: #07081B;
   }
   .layerGroupHolder{
 
@@ -51,7 +56,8 @@
 
   }
   .menuSubtitle{
-
+    color: #FFFFFF;
+    font-size: 1.4rem;
   }
 </style>
 </head>

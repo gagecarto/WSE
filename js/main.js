@@ -3,43 +3,81 @@ $(document).ready(function() {
 });
 
 
+var numberOfFiles=0;
 
 function initialize() {
 	L.mapbox.accessToken = 'pk.eyJ1Ijoic25vd2dhZ2UiLCJhIjoiUnhjQVVqMCJ9.IwvvLu1WhgtaSryHAf5Daw';
 	var map = L.mapbox.map('map', 'mapbox.streets');
 
-	map.setView([45.2,-111],8)
+	map.setView([45.2,-111],8);
 
-	//var track = new L.KML("layers/habitatCores.kml", {async: true});
-	//track.on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
-	//map.addLayer(track);
+	mapLayers = {};
 
-	function addMapLayers(){
-		$.each(dataStructure, function(i, item) {
-			var thisItem=item;						
-			for (var j = 0; j < thisItem.files.length; j++) {
-				var thisFile = thisItem.files[j];				
-				console.log(thisFile);
-				window[thisFile.id] = omnivore.kml(thisItem.path+thisFile.fileName)
-			    //.addTo(map)
-			    .on('ready', function() {			    				        			    	
-				    eval(thisFile.id).eachLayer(function(layer) {
-			        	var thisName=layer.feature.properties.name;
-			        	layer.bindPopup('farts');
-			        });
-			    })			    
-			}		
+	var pubLandsViz='https://westernsustainability.cartodb.com/api/v2/viz/020aca92-3bc4-11e5-9f39-0e853d047bba/viz.json';
+	var pubLandsLayer;
+
+	var grizViz='https://westernsustainability.cartodb.com/api/v2/viz/f8f05836-3c5a-11e5-bc3a-0e4fddd5de28/viz.json';
+	var grizLayer;
+
+	var elkViz='https://westernsustainability.cartodb.com/api/v2/viz/72226a64-3c5b-11e5-b8fa-0e018d66dc29/viz.json';
+	var elkLayer;
+
+	//publicLands
+	cartodb.createLayer(map, pubLandsViz,{
+		legends:false,
+		loaderControl:true,      
 		})
-	}
-	addMapLayers();
+		.addTo(map)
+		.on('done', function(layer) {      
+		  pubLandsLayer=layer;  
+		  mapLayers.pubLands=pubLandsLayer;
+		  mapLayers.pubLands.type='cartoDBLayer';
+		  mapLayers.pubLands.hide();
+		  layer.hide(); 		  
+		  pubLandsLayer		    		    
+		    .on('featureOver',function(e,latlng, pos, data){
+		      $("#map").css( 'cursor', 'pointer' );                    
+		    })     
+		    .on('featureOut',function(e,latlng, pos, data){ 
+		      $("#map").css( 'cursor', '-moz-grab' );
+		      $("#map").css( 'cursor', '-webkit-grab' );          
+		    })     
+		})
+
+	//grizzly
+	cartodb.createLayer(map, grizViz,{
+		legends:false,
+		loaderControl:true,      
+		})
+		.addTo(map)
+		.on('done', function(layer) {      
+		  grizLayer=layer;  
+		  mapLayers.grizLayer=grizLayer;
+		  mapLayers.grizLayer.type='cartoDBLayer';
+		  mapLayers.grizLayer.hide();		  	  
+		})
+
+	//elk
+	cartodb.createLayer(map, elkViz,{
+		legends:false,
+		loaderControl:true,      
+		})
+		.addTo(map)
+		.on('done', function(layer) {      
+		  elkLayer=layer;  
+		  mapLayers.elkLayer=elkLayer;
+		  mapLayers.elkLayer.type='cartoDBLayer';
+		  mapLayers.elkLayer.hide();		  		  		  
+		})
 
 
-	function buildDropDowns() {
-		$.each(dataStructure, function(i, item) {			
-			var thisItem = item;
+	function buildDropDowns() {		
+		$.each(dataStructure, function(i, item) {						
+		    var thisItem=item;
 			$('#sidebar').append("<div class='menuSubtitle'>" + thisItem.name + "</div><select id='" + thisItem.id + "' class='multiselectClass' multiple='multiple'></select><br>")
 			window[thisItem.id + "Layers"] = [];
 			for (var j = 0; j < thisItem.files.length; j++) {
+				numberOfFiles+=1;
 				var thisFile = thisItem.files[j];
 				eval(thisItem.id + "Layers").push(thisItem.files[j].id)
 				$("#" + thisItem.id + "").append('<option value="' + thisItem.files[j].id + '">' + thisItem.files[j].name + '</option>')
@@ -76,19 +114,73 @@ function initialize() {
 			})
 		})	
 	}
-	buildDropDowns();
+	buildDropDowns();	
 
-	function layerHider(layerToHide) {	
-		map.removeLayer(eval(layerToHide));
+	var markerColors=['#D64783','#40202A','#FD135A','#84C1B1'];
 
+	var colorNumber=0;
+
+	function addMapLayers(){
+		$.each(dataStructure, function(i, item) {
+			var thisItem = item;			
+			if(thisItem.type=='kmlLayers'){
+				//create a style for this group
+				window[thisItem.id+'Style']=L.mapbox.marker.icon({
+			        'marker-size': 'medium',
+			        'stroke-width': 0.1,
+			        'marker-symbol': 'marker-stroked',
+			        'marker-color': markerColors[colorNumber],
+			    })		
+			    colorNumber+=1;	
+				var thisGroupId=item.id;					
+				for (var j = 0; j < thisItem.files.length; j++) {
+					var thisFile = thisItem.files[j];	
+					var thisFileId= thisFile.id;							
+					//window[thisFileId] = omnivore.kml(thisItem.path+thisFile.fileName)			    
+					mapLayers[thisFile.id] = omnivore.kml(thisItem.path+thisFile.fileName);
+					mapLayers[thisFile.id].group=thisGroupId;
+					mapLayers[thisFile.id].type='kmlLayer';
+				}		
+			}
+		})		
+	}
+	addMapLayers();	
+
+	function assignLayerSymbologies(){
+		$.each(mapLayers, function(i, item) {				
+			if(item.type=='kmlLayer'){
+				var thisGroup=item.group;
+				mapLayers[i].eachLayer(function(layer) {				
+		        	var thisName=layer.feature.properties.name;	        	
+		        	layer.bindPopup(thisName);	        		        	
+		        	layer.setIcon(eval(thisGroup+'Style')); 	        	
+		        });
+			}
+		});
 	}
 
-	function layerShower(layerToShow) {
-		eval(layerToShow).addTo(map);
-		console.log(eval(layerToShow));
+	var first=true;
+	function layerShower(layerToShow) {				
+		if(first){
+			assignLayerSymbologies();
+			first=false;
+		}		
+		if(mapLayers[layerToShow].type=='cartoDBLayer'){
+			mapLayers[layerToShow].show();
+		}
+		if(mapLayers[layerToShow].type=='kmlLayer'){
+			map.addLayer(mapLayers[layerToShow]);			
+		}		
 	}
 
-
+	function layerHider(layerToHide) {							
+		if(mapLayers[layerToHide].type=='cartoDBLayer'){
+			mapLayers[layerToHide].hide();
+		}
+		if(mapLayers[layerToHide].type=='kmlLayer'){
+			map.removeLayer(mapLayers[layerToHide]);
+		}
+	}
 
 	//$('#controlsTitle').after("<div class='sidebarSubTitle'>"+thisFilterTitle+"</div><select id='"+thisSelectorId+"' name='"+thisSelectorName+"' class='multiselectClass' multiple='multiple'></select><br>")
 }
