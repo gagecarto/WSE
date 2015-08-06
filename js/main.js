@@ -22,6 +22,9 @@ function initialize() {
 	var elkViz='https://westernsustainability.cartodb.com/api/v2/viz/72226a64-3c5b-11e5-b8fa-0e018d66dc29/viz.json';
 	var elkLayer;
 
+	var hydroViz='https://westernsustainability.cartodb.com/api/v2/viz/53197708-3c87-11e5-bff0-0e018d66dc29/viz.json';
+	var hydroLayer;
+
 	//publicLands
 	cartodb.createLayer(map, pubLandsViz,{
 		legends:false,
@@ -68,6 +71,19 @@ function initialize() {
 		  mapLayers.elkLayer=elkLayer;
 		  mapLayers.elkLayer.type='cartoDBLayer';
 		  mapLayers.elkLayer.hide();		  		  		  
+		})
+
+	//HUC 250
+	cartodb.createLayer(map, hydroViz,{
+		legends:false,
+		loaderControl:true,      
+		})
+		.addTo(map)
+		.on('done', function(layer) {      
+		  hydroLayer=layer;  
+		  mapLayers.hydroLayer=hydroLayer;
+		  mapLayers.hydroLayer.type='cartoDBLayer';
+		  mapLayers.hydroLayer.hide();				  
 		})
 
 
@@ -160,7 +176,7 @@ function initialize() {
 	}
 
 	var first=true;
-	function layerShower(layerToShow) {				
+	function layerShower(layerToShow) {		
 		if(first){
 			assignLayerSymbologies();
 			first=false;

@@ -50,7 +50,10 @@ var dataStructure=[
 		"files":[
 			{"name":"Public Lands","id":"pubLands","description":"","type":"cartoDBLayer"},			
 			{"name":"Grizzly Bears (2010)","id":"grizLayer","description":"","type":"cartoDBLayer"},			
-			{"name":"Elk Habitat","id":"elkLayer","description":"","type":"cartoDBLayer"},			
+			{"name":"Elk Habitat","id":"elkLayer","description":"","type":"cartoDBLayer"},		
+			{"name":"Hydrologic Boundaries (HUC250)","id":"hydroLayer","description":"","type":"cartoDBLayer"},		
+
+				
 		]
 
 	}
