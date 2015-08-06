@@ -21,8 +21,12 @@ function initialize() {
 				var thisFile = thisItem.files[j];				
 				console.log(thisFile);
 				window[thisFile.id] = omnivore.kml(thisItem.path+thisFile.fileName)
-			    //.addTo(map)	    
+			    //.addTo(map)
 			    .on('ready', function() {			    				        			    	
+				    eval(thisFile.id).eachLayer(function(layer) {
+			        	var thisName=layer.feature.properties.name;
+			        	layer.bindPopup('farts');
+			        });
 			    })			    
 			}		
 		})
@@ -76,10 +80,12 @@ function initialize() {
 
 	function layerHider(layerToHide) {	
 		map.removeLayer(eval(layerToHide));
+
 	}
 
 	function layerShower(layerToShow) {
 		eval(layerToShow).addTo(map);
+		console.log(eval(layerToShow));
 	}
 
 
