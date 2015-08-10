@@ -25,6 +25,12 @@ function initialize() {
 	var hydroViz='https://westernsustainability.cartodb.com/api/v2/viz/53197708-3c87-11e5-bff0-0e018d66dc29/viz.json';
 	var hydroLayer;
 
+	var sageGrouseViz='https://westernsustainability.cartodb.com/api/v2/viz/445a39f0-3f98-11e5-b6a3-0e018d66dc29/viz.json';
+	var sageGrouseLayer;
+
+	var wolvesViz='https://westernsustainability.cartodb.com/api/v2/viz/3bf785fa-3f9e-11e5-b836-0e0c41326911/viz.json';
+	var wolvesLayer;
+
 	//publicLands
 	cartodb.createLayer(map, pubLandsViz,{
 		legends:false,
@@ -85,6 +91,33 @@ function initialize() {
 		  mapLayers.hydroLayer.type='cartoDBLayer';
 		  mapLayers.hydroLayer.hide();				  
 		})
+
+	//sage grouse
+	cartodb.createLayer(map, sageGrouseViz,{
+		legends:false,
+		loaderControl:true,      
+		})
+		.addTo(map)
+		.on('done', function(layer) {      
+		  sageGrouseLayer=layer;  
+		  mapLayers.sageGrouseLayer=sageGrouseLayer;
+		  mapLayers.sageGrouseLayer.type='cartoDBLayer';
+		  mapLayers.sageGrouseLayer.hide();				  
+		})
+
+	//wolves
+	cartodb.createLayer(map, wolvesViz,{
+		legends:false,
+		loaderControl:true,      
+		})
+		.addTo(map)
+		.on('done', function(layer) {      
+		  wolvesLayer=layer;  
+		  mapLayers.wolvesLayer=wolvesLayer;
+		  mapLayers.wolvesLayer.type='cartoDBLayer';
+		  mapLayers.wolvesLayer.hide();				  
+		})
+
 
 
 	function buildDropDowns() {		

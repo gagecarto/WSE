@@ -42,6 +42,18 @@ var dataStructure=[
 			{"name":"Stockmanship","id":"stockmanship","fileName":"Stockmanship.kml","description":"","type":"kmlLayer"},			
 		]
 	},
+	//folder 3
+	{
+		"type":"kmlLayers",
+		"path":"layers/restaurants/",
+		"description":"",
+		"name":"Restaurants",	
+		"id":"restaurants",
+		"files":[
+			{"name":"2014 Restaurants","id":"restaurants2014","fileName":"2014.kml","description":"","type":"kmlLayer"},
+			{"name":"Older Restaurants","id":"restaurantsOld","fileName":"Earlier.kml","description":"","type":"kmlLayer"},			
+		]
+	},
 	//cartodbLayers
 	{
 		"type":"cartodbLayers",
@@ -50,10 +62,10 @@ var dataStructure=[
 		"files":[
 			{"name":"Public Lands","id":"pubLands","description":"","type":"cartoDBLayer"},			
 			{"name":"Grizzly Bears (2010)","id":"grizLayer","description":"","type":"cartoDBLayer"},			
+			{"name":"Wolf Range (generalized)","id":"wolvesLayer","description":"","type":"cartoDBLayer"},			
+			{"name":"Sage Grouse Core Areas","id":"sageGrouseLayer","description":"","type":"cartoDBLayer"},			
 			{"name":"Elk Habitat","id":"elkLayer","description":"","type":"cartoDBLayer"},		
-			{"name":"Hydrologic Boundaries (HUC250)","id":"hydroLayer","description":"","type":"cartoDBLayer"},		
-
-				
+			{"name":"Hydrologic Boundaries (HUC250)","id":"hydroLayer","description":"","type":"cartoDBLayer"},	
 		]
 
 	}
