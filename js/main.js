@@ -31,6 +31,9 @@ function initialize() {
 	var wolvesViz='https://westernsustainability.cartodb.com/api/v2/viz/3bf785fa-3f9e-11e5-b836-0e0c41326911/viz.json';
 	var wolvesLayer;
 
+	var consValueViz='https://westernsustainability.cartodb.com/api/v2/viz/88947276-45dc-11e5-97db-0e4fddd5de28/viz.json';
+	var consValueLayer;
+
 	//publicLands
 	cartodb.createLayer(map, pubLandsViz,{
 		legends:false,
@@ -116,6 +119,18 @@ function initialize() {
 		  mapLayers.wolvesLayer=wolvesLayer;
 		  mapLayers.wolvesLayer.type='cartoDBLayer';
 		  mapLayers.wolvesLayer.hide();				  
+		})
+	//conservation value
+	cartodb.createLayer(map, consValueViz,{
+		legends:false,
+		loaderControl:true,      
+		})
+		.addTo(map)
+		.on('done', function(layer) {      
+		  consValueLayer=layer;  
+		  mapLayers.consValueLayer=consValueLayer;
+		  mapLayers.consValueLayer.type='cartoDBLayer';
+		  mapLayers.consValueLayer.hide();				  
 		})
 
 
