@@ -67,6 +67,7 @@ var dataStructure=[
 			{"name":"Elk Habitat","id":"elkLayer","description":"","type":"cartoDBLayer"},		
 			{"name":"Hydrologic Boundaries (HUC250)","id":"hydroLayer","description":"","type":"cartoDBLayer"},	
 			{"name":"Areas of High Conservation Value","id":"consValueLayer","description":"","type":"cartoDBLayer"},	
+			{"name":"Important Bird Areas (MT & ID)","id":"ibaLayer","description":"","type":"cartoDBLayer"},	
 		]
 
 	}

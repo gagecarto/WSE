@@ -34,6 +34,9 @@ function initialize() {
 	var consValueViz='https://westernsustainability.cartodb.com/api/v2/viz/88947276-45dc-11e5-97db-0e4fddd5de28/viz.json';
 	var consValueLayer;
 
+	var ibaViz='https://westernsustainability.cartodb.com/api/v2/viz/13a8317a-7dc0-11e5-903b-0e5db1731f59/viz.json';
+	var ibaLayer;
+
 	//publicLands
 	cartodb.createLayer(map, pubLandsViz,{
 		legends:false,
@@ -131,6 +134,19 @@ function initialize() {
 		  mapLayers.consValueLayer=consValueLayer;
 		  mapLayers.consValueLayer.type='cartoDBLayer';
 		  mapLayers.consValueLayer.hide();				  
+		})
+
+	//important bird areas
+	cartodb.createLayer(map, ibaViz,{
+		legends:false,
+		loaderControl:true,      
+		})
+		.addTo(map)
+		.on('done', function(layer) {      
+		  ibaLayer=layer;  
+		  mapLayers.ibaLayer=ibaLayer;
+		  mapLayers.ibaLayer.type='cartoDBLayer';
+		  mapLayers.ibaLayer.hide();				  
 		})
 
 
