@@ -34,7 +34,7 @@ function initialize() {
 	var consValueViz='https://westernsustainability.cartodb.com/api/v2/viz/88947276-45dc-11e5-97db-0e4fddd5de28/viz.json';
 	var consValueLayer;
 
-	var ibaViz='https://westernsustainability.cartodb.com/api/v2/viz/13a8317a-7dc0-11e5-903b-0e5db1731f59/viz.json';
+	var ibaViz='https://westernsustainability.cartodb.com/api/v2/viz/5e1ff808-9212-11e5-94bd-0e787de82d45/viz.json';
 	var ibaLayer;
 
 	//publicLands
